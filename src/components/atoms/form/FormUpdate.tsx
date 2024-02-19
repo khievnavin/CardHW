@@ -61,7 +61,7 @@ const FormUpdate: React.FC<FormAddProps> = ({ selectedUser, updateUser }) => {
   };
 
   return (
-    <form onSubmit={handleOnSubmit}>
+    <form onSubmit={handleOnSubmit} className="px-10 py-5 bg-slate-500 rounded-md">
       <label htmlFor="name">Name:</label>
       <input
         className="text-black border rounded-md border-black m-2 focus:ring-2 outline-none px-2"
@@ -78,7 +78,7 @@ const FormUpdate: React.FC<FormAddProps> = ({ selectedUser, updateUser }) => {
       {selectedUser.profile ? (
         <div className="relative">
           <img src={selectedUser.profile} alt="profile" />
-          <button className="absolute bg-red-500" onClick={handleRemoveFile}>
+          <button className="mt-1 mb-3 absolute bg-red-500  rounded-full" onClick={handleRemoveFile}>
             &times;
           </button>
         </div>

@@ -16,7 +16,7 @@ const FloatingButton:React.FC<FloatingButtonProps> = ({children,onClick,position
           case "bottom-right":
             return "bottom-5 right-5";
           case "bottom-left":
-            return "bottom-5 left-5";
+            return "bottom-12 left-7";
           default:
             return "top-5 left-5";
         }

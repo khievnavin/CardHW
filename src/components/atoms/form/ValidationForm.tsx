@@ -4,8 +4,6 @@ import { userSchema } from "@/components/validations/schema";
 import { ErrorsMessages, InputForm, Label } from ".";
 import { Input } from ".";
 
-// 1. UseEffect = when to use it, what is side effect, use effect with no dependency, with dependencies
-// 2. Context API= What is Context API? When to use? How to use it?
 
 interface FormAddProps {
   addNewUser: (user: User) => void;
@@ -15,7 +13,7 @@ const ValidationForm = ({ addNewUser }: FormAddProps) => {
   const [user, setUser] = useState({
     id: "",
     username: "",
-    profile: null,
+    profile: null, 
   });
   const [errors, setErrors] = useState({
     username: "",
@@ -90,7 +88,7 @@ const ValidationForm = ({ addNewUser }: FormAddProps) => {
   };
 
   return (
-    <InputForm className="px-10 py-5 bg-white" onSubmit={handleOnSubmit}>
+    <InputForm className="px-10 py-5 bg-white rounded-md" onSubmit={handleOnSubmit}>
 
       <Input
         className="text-black border rounded-md border-black m-2 focus:ring-2 outline-none px-5 py-2"

@@ -32,36 +32,35 @@ interface CardListProps {
 
 const CardList = ({ items, selectCard, onSelectCard, onDeleteCard, searchuser }: CardListProps) => {
   return (
-    <div>
-      {searchuser
-        ? items
-            .filter((item) =>
-              item.username.toLowerCase().includes(searchuser.toLowerCase())
-            )
-            .map((item, index) => (
+      <div>
+        {searchuser
+          ? items
+              .filter((item) =>
+                item.username.toLowerCase().includes(searchuser.toLowerCase())
+              )
+              .map((item, index) => (
+                <Card
+                id={item.id}
+                name={item.username}
+                key={item.id || index}
+                image={item.profile}
+                onSelectCard={onSelectCard}
+                selectCard={selectCard}
+                onDeleteCard={onDeleteCard}
+                />
+              ))
+            : items.map((item, index) => (
               <Card
-              id={item.id}
-              name={item.username}
-              key={item.id || index}
-              image={item.profile}
-              onSelectCard={onSelectCard}
-              selectCard={selectCard}
-              onDeleteCard={onDeleteCard}
-              />
+                  id={item.id}
+                  name={item.username}
+                  key={item.id || index}
+                  image={item.profile}
+                  onSelectCard={onSelectCard}
+                  selectCard={selectCard}
+                  onDeleteCard={onDeleteCard}></Card>
             ))
-          : items.map((item, index) => (
-            <Card
-            id={item.id}
-            name={item.username}
-            key={item.id || index}
-            image={item.profile}
-            onSelectCard={onSelectCard}
-            selectCard={selectCard}
-            onDeleteCard={onDeleteCard}
-            />
-          ))
-      }
-    </div>
+        }
+      </div>
   );
 }
 export { CardList };
